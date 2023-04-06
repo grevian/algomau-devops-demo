@@ -34,6 +34,10 @@ func runWebserver() *http.Server {
 	router.HandleFunc("/hi", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Hi")
 	})
+	
+	router.HandleFunc("/bye", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "Goodbye!")
+	})
 
 	server.Handler = router
 
